@@ -9,19 +9,19 @@ import UIKit
 
 class PhotoColectionViewController: UICollectionViewController {
     
-    
     //MARK: - Property
     
     private lazy var addBarButtonItem: UIBarButtonItem = {
-        return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
+        var addButton = UIBarButtonItem()
+        addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonItemTapped))
+        return addButton
+        
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupCollectionView()
-        
     }
     
     //MARK: - Navigation Item
@@ -35,24 +35,9 @@ class PhotoColectionViewController: UICollectionViewController {
     }
     
     private func setupNavigationBar() {
-        let titleLabel = UILabel()
-        titleLabel.text = "Альбомы"
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
-        titleLabel.textColor = UIColor.black
+        navigationItem.title = "Альбомы"
         navigationItem.leftBarButtonItem = addBarButtonItem
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-        cell.backgroundColor = .red
-        
-        return cell
-    }
-    
 }
 

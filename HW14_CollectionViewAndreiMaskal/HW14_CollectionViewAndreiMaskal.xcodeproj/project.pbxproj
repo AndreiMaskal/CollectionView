@@ -15,6 +15,7 @@
 		A03B33A42850F9A0003A147B /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = A03B33A32850F9A0003A147B /* Algorithms */; };
 		A03B33A6285140C3003A147B /* PhotoColectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33A5285140C3003A147B /* PhotoColectionViewController.swift */; };
 		A03B33A8285141C6003A147B /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33A7285141C6003A147B /* MainTabBarViewController.swift */; };
+		A03B33AC2852772A003A147B /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33AB2852772A003A147B /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A03B339A2850F135003A147B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A03B33A5285140C3003A147B /* PhotoColectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoColectionViewController.swift; sourceTree = "<group>"; };
 		A03B33A7285141C6003A147B /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		A03B33AB2852772A003A147B /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				A03B338C2850F134003A147B /* AppDelegate.swift */,
 				A03B33902850F134003A147B /* ViewController.swift */,
+				A03B33AB2852772A003A147B /* PhotosCollectionViewCell.swift */,
 				A03B33A7285141C6003A147B /* MainTabBarViewController.swift */,
 				A03B33A5285140C3003A147B /* PhotoColectionViewController.swift */,
 				A03B33922850F134003A147B /* Main.storyboard */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03B33A6285140C3003A147B /* PhotoColectionViewController.swift in Sources */,
+				A03B33AC2852772A003A147B /* PhotosCollectionViewCell.swift in Sources */,
 				A03B33A8285141C6003A147B /* MainTabBarViewController.swift in Sources */,
 				A03B33912850F134003A147B /* ViewController.swift in Sources */,
 				A03B338D2850F134003A147B /* AppDelegate.swift in Sources */,
