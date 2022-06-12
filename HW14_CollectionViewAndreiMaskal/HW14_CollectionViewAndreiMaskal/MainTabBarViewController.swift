@@ -11,15 +11,17 @@ class MainTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        let albomController = PhotoColectionViewController(collectionViewLayout: UICollectionViewLayout())
+    
+        let albomController = AlbumViewController()
+        let searchController = SearchViewController()
+        let forYouController = ForYouViewController()
+        let mediatekaController = MediatekaViewController()
         
         viewControllers = [
-            generateNavigationController(rootViewController: ViewController(), title: "Медиатека", image: .init(named: "photo")!),
-            generateNavigationController(rootViewController: ViewController(), title: "Для Вас", image: .init(named: "heart")!),
-            generateNavigationController(rootViewController: albomController, title: "Альбомы", image: .init(named: "rectangle")!),
-            generateNavigationController(rootViewController: ViewController(), title: "Поиск", image: .init(named: "magnifyingglass")!)]
+            generateNavigationController(rootViewController: mediatekaController, title: "Медиатека", image: UIImage(systemName: "photo.on.rectangle")),
+            generateNavigationController(rootViewController: forYouController, title: "Для Вас", image: UIImage(systemName: "heart.text.square")),
+            generateNavigationController(rootViewController: albomController, title: "Альбомы", image: UIImage(systemName: "rectangle.stack.fill")),
+            generateNavigationController(rootViewController: searchController, title: "Поиск", image: UIImage(systemName: "magnifyingglass"))]
     
     if #available(iOS 15, *) {
         let tabBarAppearance = UITabBarAppearance()
@@ -28,12 +30,12 @@ class MainTabBarViewController: UITabBarController {
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 }
-    private func generateNavigationController(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
+    private func generateNavigationController(rootViewController: UIViewController, title: String, image: UIImage?) -> UIViewController {
         let navigationViewController = UINavigationController(rootViewController: rootViewController)
+        
         navigationViewController.tabBarItem.title = title
         navigationViewController.tabBarItem.image = image
-        
-        
+    
         return navigationViewController
         
     }
