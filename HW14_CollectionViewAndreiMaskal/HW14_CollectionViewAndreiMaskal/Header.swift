@@ -9,7 +9,7 @@ import UIKit
 
 class HeaderView: UICollectionReusableView {
   static let reuseIdentifier = "header"
-
+    
     lazy var lineSeparators: UIView = {
         let line = UIView()
         line.backgroundColor = .systemGray
@@ -38,16 +38,21 @@ class HeaderView: UICollectionReusableView {
         stackView.distribution = .fill
         return stackView
     }()
-     
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    configure()
-  }
-
-  required init?(coder: NSCoder) {
-    fatalError()
-
-  }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        button.isHidden = false
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+        
+    }
 }
 
 extension HeaderView {
@@ -57,14 +62,12 @@ extension HeaderView {
         addSubview(label)
         addSubview(lineSeparators)
         addSubview(button)
-        
-        
+    
         button.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         lineSeparators.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             button.topAnchor.constraint(equalTo:  label.topAnchor),
             button.bottomAnchor.constraint(equalTo: label.bottomAnchor),
@@ -78,16 +81,7 @@ extension HeaderView {
             lineSeparators.heightAnchor.constraint(equalToConstant: 1),
             lineSeparators.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             lineSeparators.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
         ])
-         
-//        stackView.addSubview(label)
-//        stackView.addSubview(button)
-        
-//         stackView.addArrangedSubviewsForAutoLayout([
-//             label,
-//             button,
-//         ])
      }
 }
 

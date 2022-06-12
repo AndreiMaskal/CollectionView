@@ -65,6 +65,7 @@ class VerticalCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 extension VerticalCell {
     
     func configure() {
@@ -100,7 +101,7 @@ extension VerticalCell {
             button.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor, constant: -Static.indent),
 
             numberPhotosLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            numberPhotosLabel.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -1 ),
+            numberPhotosLabel.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -1)
         ])
     }
 }

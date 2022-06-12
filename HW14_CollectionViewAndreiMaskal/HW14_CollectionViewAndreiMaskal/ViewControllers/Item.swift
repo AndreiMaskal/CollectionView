@@ -75,5 +75,3 @@ class ItemData {
         return [sectionOne, sectionTwo, sectionThree, sectionFor]
     }
 }
-
-

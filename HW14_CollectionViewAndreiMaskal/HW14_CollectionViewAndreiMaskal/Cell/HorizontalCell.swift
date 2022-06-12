@@ -38,7 +38,6 @@ class HorizontalCell: UICollectionViewCell {
         return label
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         configure()
@@ -61,7 +60,6 @@ extension HorizontalCell {
         namePhotoLabel.translatesAutoresizingMaskIntoConstraints = false
         numberPhotosLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        
         NSLayoutConstraint.activate([
             photoImageView.topAnchor.constraint(equalTo: self.topAnchor),
             photoImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -69,7 +67,6 @@ extension HorizontalCell {
             photoImageView.heightAnchor.constraint(equalTo: photoImageView.widthAnchor),
             
             namePhotoLabel.topAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: Static.indent),
-            
             numberPhotosLabel.topAnchor.constraint(equalTo: namePhotoLabel.bottomAnchor, constant: Static.indent),
         ])
     }

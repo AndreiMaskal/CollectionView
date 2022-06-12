@@ -53,8 +53,8 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return arrayItems.count
-       }
-       
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -68,6 +68,12 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         default:
             return 0
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCollectionView()
+        setupNavigationBar()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,7 +98,8 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell.iconView.image = item.image
             cell.nameLabel.text = item.text
             cell.numberPhotosLabel.text = item.number.formatted()
-        
+            cell.lineSeparators.isHidden = (indexPath.row == (arrayItems[2].count - 1))
+            
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(
@@ -102,7 +109,8 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
             cell.iconView.image = item.image
             cell.nameLabel.text = item.text
             cell.numberPhotosLabel.text = item.number.formatted()
-
+            cell.lineSeparators.isHidden = (indexPath.row == (arrayItems[3].count - 1))
+            
             return cell
         default:
             break
@@ -118,16 +126,14 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
             for: indexPath) as? HeaderView else {
             return HeaderView()
         }
-     
+        
         switch indexPath.section  {
         case 0:
             headerView.label.text = "Мои альбомы"
             headerView.button.text = "Все"
-            headerView.button.isHidden = false
         case 1:
             headerView.label.text = "Люди и места"
             headerView.button.text = "Все"
-            headerView.button.isHidden = false
         case 2:
             headerView.label.text = "Типы медиафайлов"
             headerView.button.isHidden = true
@@ -138,12 +144,6 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
             break
         }
         return headerView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupCollectionView()
-        setupNavigationBar()
     }
     
     @objc private func addBarButtonItemTapped() {
@@ -190,11 +190,8 @@ private extension AlbumViewController {
         }
         return layout
     }
-}
-
-private extension AlbumViewController {
     
-    private func firstSection() -> NSCollectionLayoutSection {
+    func firstSection() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -245,50 +242,50 @@ private extension AlbumViewController {
     }
     
     private func secondSection() -> NSCollectionLayoutSection {
-            
-            let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .fractionalWidth(1)
-            )
-            
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(
-                top: .zero,
-                leading: Static.leftIndentLayout,
-                bottom: .zero,
-                trailing: Static.leftIndentLayout)
-            
-            let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(0.9/2),
-                heightDimension: .fractionalWidth(0.9/2)
-            )
-            
-            let group = NSCollectionLayoutGroup.vertical(
-                layoutSize: groupSize,
-                subitem: item,
-                count: 1
-            )
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(
-                top: .zero,
-                leading: Static.left,
-                bottom: 56,
-                trailing: Static.left)
-            section.orthogonalScrollingBehavior = .paging
-            
-            let headerSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(45))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top)
-
-            section.boundarySupplementaryItems = [header]
-            
-            return section
-        }
+        
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalWidth(1)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: .zero,
+            leading: Static.leftIndentLayout,
+            bottom: .zero,
+            trailing: Static.leftIndentLayout)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.9/2),
+            heightDimension: .fractionalWidth(0.9/2)
+        )
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: groupSize,
+            subitem: item,
+            count: 1
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: .zero,
+            leading: Static.left,
+            bottom: 56,
+            trailing: Static.left)
+        section.orthogonalScrollingBehavior = .paging
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(45))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        
+        return section
+    }
     
     private func thirdSection() -> NSCollectionLayoutSection {
         
@@ -328,44 +325,44 @@ private extension AlbumViewController {
         
         return section
     }
+    
+    private func fourthSection() -> NSCollectionLayoutSection {
         
-        private func fourthSection() -> NSCollectionLayoutSection {
-            
-            let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: .fractionalWidth(1/09)
-            )
-            
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(
-                top: Static.topIndentVerticalSection,
-                leading: .zero,
-                bottom: .zero,
-                trailing: .zero)
-            
-            let group = NSCollectionLayoutGroup.vertical(
-                layoutSize:  itemSize,
-                subitem: item,
-                count: 1
-            )
-            
-            let section = NSCollectionLayoutSection(group: group)
-            
-            section.contentInsets.leading = Static.left
-           
-            let headerSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalWidth(1/09)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: Static.topIndentVerticalSection,
+            leading: .zero,
+            bottom: .zero,
+            trailing: .zero)
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize:  itemSize,
+            subitem: item,
+            count: 1
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        section.contentInsets.leading = Static.left
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
             heightDimension: .absolute(45))
-            
-            let header = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top)
-            
-            section.boundarySupplementaryItems = [header]
-            header.zIndex = Int.max
-            
-            return section
-        }
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+        
+        section.boundarySupplementaryItems = [header]
+        header.zIndex = Int.max
+        
+        return section
+    }
 }
 
