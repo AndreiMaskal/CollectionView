@@ -17,9 +17,9 @@
 		A03B33BB2854DDBC003A147B /* MediatekaNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33BA2854DDBC003A147B /* MediatekaNavigatorViewController.swift */; };
 		A03B33BD2854DDDF003A147B /* SearchNawigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33BC2854DDDF003A147B /* SearchNawigatorViewController.swift */; };
 		A03B33BF2854DE04003A147B /* ForYouNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33BE2854DE04003A147B /* ForYouNavigationViewController.swift */; };
-		A03B33C728553CBB003A147B /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33C628553CBB003A147B /* Header.swift */; };
+		A03B33C728553CBB003A147B /* HeaderTopCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33C628553CBB003A147B /* HeaderTopCellView.swift */; };
 		A03B33CE285605CC003A147B /* HorizontalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33CD285605CC003A147B /* HorizontalCell.swift */; };
-		A03B33DB28561AD8003A147B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33DA28561AD8003A147B /* Item.swift */; };
+		A03B33DB28561AD8003A147B /* ItemDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33DA28561AD8003A147B /* ItemDataModel.swift */; };
 		A03B33DD285620B7003A147B /* VerticalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B33DC285620B7003A147B /* VerticalCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +35,9 @@
 		A03B33BA2854DDBC003A147B /* MediatekaNavigatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediatekaNavigatorViewController.swift; sourceTree = "<group>"; };
 		A03B33BC2854DDDF003A147B /* SearchNawigatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNawigatorViewController.swift; sourceTree = "<group>"; };
 		A03B33BE2854DE04003A147B /* ForYouNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouNavigationViewController.swift; sourceTree = "<group>"; };
-		A03B33C628553CBB003A147B /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		A03B33C628553CBB003A147B /* HeaderTopCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTopCellView.swift; sourceTree = "<group>"; };
 		A03B33CD285605CC003A147B /* HorizontalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCell.swift; sourceTree = "<group>"; };
-		A03B33DA28561AD8003A147B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A03B33DA28561AD8003A147B /* ItemDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDataModel.swift; sourceTree = "<group>"; };
 		A03B33DC285620B7003A147B /* VerticalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,11 +72,12 @@
 		A03B338B2850F134003A147B /* HW14_CollectionViewAndreiMaskal */ = {
 			isa = PBXGroup;
 			children = (
-				A03B33CC285605B1003A147B /* Cell */,
 				A03B338C2850F134003A147B /* AppDelegate.swift */,
-				A03B33C628553CBB003A147B /* Header.swift */,
 				A03B33A7285141C6003A147B /* MainTabBarViewController.swift */,
+				A03B33CC285605B1003A147B /* Cell */,
+				A087F30C2857D48500C37C3B /* Models */,
 				A03B33C02854DFE2003A147B /* ViewControllers */,
+				A087F30D2857D4D400C37C3B /* Headers */,
 				A03B33922850F134003A147B /* Main.storyboard */,
 				A03B33952850F135003A147B /* Assets.xcassets */,
 				A03B33972850F135003A147B /* LaunchScreen.storyboard */,
@@ -92,7 +93,6 @@
 				A03B33BA2854DDBC003A147B /* MediatekaNavigatorViewController.swift */,
 				A03B33BE2854DE04003A147B /* ForYouNavigationViewController.swift */,
 				A03B33B62854C213003A147B /* AlbumViewController.swift */,
-				A03B33DA28561AD8003A147B /* Item.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,6 +104,22 @@
 				A03B33DC285620B7003A147B /* VerticalCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A087F30C2857D48500C37C3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A03B33DA28561AD8003A147B /* ItemDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A087F30D2857D4D400C37C3B /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				A03B33C628553CBB003A147B /* HeaderTopCellView.swift */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03B33B72854C213003A147B /* AlbumViewController.swift in Sources */,
-				A03B33C728553CBB003A147B /* Header.swift in Sources */,
+				A03B33C728553CBB003A147B /* HeaderTopCellView.swift in Sources */,
 				A03B33A8285141C6003A147B /* MainTabBarViewController.swift in Sources */,
 				A03B33BF2854DE04003A147B /* ForYouNavigationViewController.swift in Sources */,
-				A03B33DB28561AD8003A147B /* Item.swift in Sources */,
+				A03B33DB28561AD8003A147B /* ItemDataModel.swift in Sources */,
 				A03B338D2850F134003A147B /* AppDelegate.swift in Sources */,
 				A03B33CE285605CC003A147B /* HorizontalCell.swift in Sources */,
 				A03B33BB2854DDBC003A147B /* MediatekaNavigatorViewController.swift in Sources */,

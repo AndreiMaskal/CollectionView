@@ -9,12 +9,6 @@ import UIKit
 
 class VerticalCell: UICollectionViewCell {
     
-    enum Static {
-        static let indent: CGFloat = 4
-        static let lineIndent: CGFloat = 48
-        static let iconSize: CGFloat = 28
-    }
-    
     static let reuseID = "VerticalCell"
     
     lazy var iconView: UIImageView = {
@@ -67,6 +61,12 @@ class VerticalCell: UICollectionViewCell {
 }
 
 extension VerticalCell {
+    
+    enum Static {
+        static let indent: CGFloat = 4
+        static let lineIndent: CGFloat = 48
+        static let iconSize: CGFloat = 28
+    }
     
     func configure() {
         contentView.addSubview(iconView)

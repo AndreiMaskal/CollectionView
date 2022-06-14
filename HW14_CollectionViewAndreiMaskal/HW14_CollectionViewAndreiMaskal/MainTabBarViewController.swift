@@ -37,6 +37,5 @@ class MainTabBarViewController: UITabBarController {
         navigationViewController.tabBarItem.image = image
     
         return navigationViewController
-        
     }
 }

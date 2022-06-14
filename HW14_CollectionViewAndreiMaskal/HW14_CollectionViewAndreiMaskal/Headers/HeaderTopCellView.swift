@@ -1,5 +1,5 @@
 //
-//  Header.swift
+//  HeaderTopCellView.swift
 //  HW14_CollectionViewAndreiMaskal
 //
 //  Created by Andrei Maskal on 11/06/2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderView: UICollectionReusableView {
+class HeaderTopCellView: UICollectionReusableView {
   static let reuseIdentifier = "header"
     
     lazy var lineSeparators: UIView = {
@@ -55,7 +55,7 @@ class HeaderView: UICollectionReusableView {
     }
 }
 
-extension HeaderView {
+extension HeaderTopCellView {
     
     func configure() {
         

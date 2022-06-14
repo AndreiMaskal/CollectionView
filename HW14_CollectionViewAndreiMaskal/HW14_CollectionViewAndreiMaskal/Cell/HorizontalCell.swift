@@ -8,13 +8,9 @@
 import UIKit
 
 class HorizontalCell: UICollectionViewCell {
+    
     static let reuseID = "HorizontalCell"
     
-    enum Static {
-        static let indent: CGFloat = 4
-        static let photoRadius: CGFloat = 10
-    }
-        
     lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = Static.photoRadius
@@ -49,6 +45,11 @@ class HorizontalCell: UICollectionViewCell {
 }
 
 extension HorizontalCell {
+    
+    enum Static {
+        static let indent: CGFloat = 4
+        static let photoRadius: CGFloat = 10
+    }
     
     func configure() {
     
